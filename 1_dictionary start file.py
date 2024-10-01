@@ -10,16 +10,24 @@ print()
 print('*****  start section 1 - print dictionary ********')
 print()
 
+print(phonebook)
 
+print(len (phonebook))
+mydict = {}
 
+print(mydict)
 
+mydict = dict(m=8,n=9)
+
+print(mydict)
 
 print()
 print('*****  end section 1 ********')
 print()
 
 
-'''
+
+
 
 
 print()
@@ -28,8 +36,15 @@ print()
 
 
 
+name = 'Chris'
+if name in phonebook:
+    phone = phonebook[name]
+    print(phone)
+else:
+    print(f"{name} is not in the phonebook")
 
 
+#print(type(phonebook['Chris']))
 
 
 print()
@@ -47,8 +62,10 @@ print('*****  start section 3 - edit/append dictionary ********')
 print()
 
 
-
-
+print(phonebook)
+phonebook['Joe'] = '555-0123'
+phonebook['Chris'] = '555-4444'
+print(phonebook)
 
 print()
 print('*****  end section 3 ********')
@@ -64,6 +81,9 @@ print('*****  start section 4 - delete/remove from dictionary ********')
 print()
 
 
+print(phonebook)
+del phonebook['Chris']
+print(phonebook)
 
 
 print()
@@ -79,8 +99,15 @@ print()
 print('*****  start section 5 - iterate through keys, values, items ********')
 print()
 
+for k in phonebook:
+    print(f"The name is {k} and the phone number is {phonebook[k]}")
 
+for value in phonebook.values():
+    print(f"Phone number: {value}")
 
+for k,v in phonebook.items():
+        print(f"The name is {k} and the phone number is {phonebook{v}}")
+        
 
 
 
@@ -96,10 +123,11 @@ print()
 print('*****  start section 6 - using get and clear ********')
 print()
 
+phone = phonebook.get('chris','555-0000')
+print(phone)
 
-
-
-
+phonebook.clear()
+print(phonebook)
 
 print()
 print('*****  end section 6 ********')
@@ -111,8 +139,9 @@ print()
 print('*****  start section 7 - using pop method ********')
 print()
 
-
-
+phone = phonebook.pop('Chris', 'not found')
+print(phone)
+print(phonebook)
 
 
 
@@ -126,6 +155,9 @@ print()
 print('*****  start section 8 - using popitem ********')
 print()
 
+a = phonebook.popitem()
+print(a)
+print(phonebook)
 
 
 
@@ -141,6 +173,13 @@ print()
 print('*****  start section 9 - using random and converting to list ********')
 print()
 
+list_of_keys = list(phonebook)
+random_key = random.choice(list_of_keys)
+phone = phonebook[random_key]
+print(f"the key is {random_key} and the phone number is {phone}")
+
+phone = phonebook[random.choice(list(phonebook))]
+
 
 
 
@@ -150,7 +189,7 @@ print('*****  end section 9 ********')
 print()
 
 
-'''
+
 
 
 
